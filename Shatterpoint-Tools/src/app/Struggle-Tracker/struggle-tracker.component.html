@@ -1,0 +1,35 @@
+<div class="struggle-tracker-container">
+    <h2 style="color: white;">Struggle Tracker</h2>
+  
+    <div class="tracker">
+      <div class="tracker-bar">
+        <div *ngFor="let marker of intervals; let i = index" 
+             class="interval" 
+             [class.active]="marker === 'C'" 
+             [class.momentum1]="marker === 'M1'" 
+             [class.momentum2]="marker === 'M2'" 
+             [class.middle]="i === 8">
+          {{ marker === 'C' ? 'S' : (marker === 'M1' ? 'M1' : (marker === 'M2' ? 'M2' : '')) }}
+        </div>
+      </div>
+    </div>
+  
+    <div class="tracker-controls">
+      <div class="control-group">
+        <button pButton label="Pull to player 1"class="p-button-danger" (click)="decreaseProgress(1)"></button>
+        <button pButton label="Increase Momentum" class="p-button-info" (click)="increaseMomentum(1)"></button>
+        <button pButton label="Decrese Momentum" class="p-button-info" (click)="decreaseMomentum(1)"></button>
+      </div>
+  
+      <div class="control-group">
+        <button pButton label="Pull to Player 2 " class="p-button-success" (click)="increaseProgress(2)"></button>
+        <button pButton label="Increase Momentum" class="p-button-info" (click)="increaseMomentum(2)"></button>
+        <button pButton label="Decrese Momentum" class="p-button-info" (click)="decreaseMomentum(2)"></button>
+      </div>
+    </div>
+
+    <div class="center">
+        <button pButton label="Reset Tracker" class="p-button-info" (click)="resetTracker()"></button>
+    </div>
+  </div>
+  

@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at 30% 40%, rgba(255, 20, 147, 0.5), transparent 60%),
+                radial-gradient(circle at 70% 50%, rgba(186, 85, 211, 0.5), transparent 60%),
+                radial-gradient(circle at 40% 70%, rgba(219, 112, 147, 0.4), transparent 60%),
+                radial-gradient(circle at 60% 20%, rgba(75, 0, 130, 0.6), transparent 60%),
+                #0d0d0d;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Ccircle cx="10" cy="10" r="1" fill="white" /%3E%3Ccircle cx="30" cy="50" r="1.5" fill="white" /%3E%3Ccircle cx="70" cy="30" r="0.5" fill="white" /%3E%3Ccircle cx="90" cy="70" r="1" fill="white" /%3E%3C/svg%3E') repeat;
+    z-index: 1;
+    opacity: 0.8;
+    animation: twinkle 6s infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Ccircle cx="20" cy="20" r="1" fill="white" /%3E%3Ccircle cx="50" cy="50" r="1.5" fill="white" /%3E%3Ccircle cx="80" cy="80" r="0.5" fill="white" /%3E%3Ccircle cx="40" cy="70" r="1" fill="white" /%3E%3C/svg%3E') repeat;
+    z-index: 2;
+    opacity: 0.5;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
